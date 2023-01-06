@@ -1,0 +1,5 @@
+.namesList {
+  color: rgb(230, 247, 5);
+  display: flex;
+  flex-direction: column;
+}

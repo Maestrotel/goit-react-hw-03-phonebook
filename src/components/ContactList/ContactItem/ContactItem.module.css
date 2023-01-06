@@ -1,0 +1,19 @@
+.btn {
+  color: red;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.colon {
+  color: rgb(249, 248, 250);
+}
+
+.numTel {
+  color: #000;
+  margin: 20px;
+}
+
+.namesItem {
+  margin-bottom: 10px;
+}
