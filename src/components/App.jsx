@@ -5,6 +5,8 @@ import { nanoid } from 'nanoid';
 import { Filter } from './Filter/Filter';
 import css from './App.module.css';
 
+const LOCAL_KEY = 'contacts';
+
 export class App extends Component {
   state = {
     contacts: [
@@ -15,6 +17,20 @@ export class App extends Component {
     ],
     filter: '',
   };
+
+  componentDidMount() {
+    const localContacts = localStorage.getItem(LOCAL_KEY);
+    const parsedContacts = JSON.parse(localContacts);
+    if (parsedContacts) {
+      this.setState({ parsedContacts });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   onAddContact = ({ name, number }) => {
     const newContact = {

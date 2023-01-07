@@ -2,11 +2,29 @@ import { Component } from 'react';
 import css from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 
+// const LOCAL_KEY = 'contacts';
+
 export class ContactForm extends Component {
   state = {
     name: '',
     number: '',
   };
+
+  // componentDidMount() {
+  //   const localContacts = localStorage.getItem(LOCAL_KEY);
+  //   const parsedContacts = JSON.parse(localContacts);
+  //   if (parsedContacts) {
+  //     this.setState({ parsedContacts });
+  //   }
+  // }
+
+  // componentDidUpdate(_, prevState) {
+  //   if (prevState !== this.state) {
+  //     localStorage.setItem('contacts', JSON.stringify(this.state));
+  //     // localStorage.setItem('first', JSON.stringify(this.state.name));
+  //     // localStorage.setItem('second', JSON.stringify(this.state.number));
+  //   }
+  // }
 
   makeSubmit = e => {
     e.preventDefault();
