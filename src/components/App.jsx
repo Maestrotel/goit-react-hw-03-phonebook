@@ -22,7 +22,7 @@ export class App extends Component {
     const localContacts = localStorage.getItem(LOCAL_KEY);
     const parsedContacts = JSON.parse(localContacts);
     if (parsedContacts) {
-      this.setState({ parsedContacts });
+      this.setState({ contacts: parsedContacts });
     }
   }
 
