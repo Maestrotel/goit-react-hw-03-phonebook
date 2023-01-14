@@ -10,8 +10,6 @@ export class ContactForm extends Component {
 
   makeSubmit = e => {
     e.preventDefault();
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
     this.props.onAddContact(this.state);
     this.reset();
   };
